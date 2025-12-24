@@ -1,0 +1,20 @@
+//
+//  LocalConfig.xcconfig
+//  Tap to Pay Sample App
+//
+//  Created by Allan Cheng on 12/24/25.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project
+
+// Replace with the keys you get from CardFree
+DEV_API_KEY=REPLACE_ME
+UAT_API_KEY=REPLACE_ME
+PROD_API_KEY=REPLACE_ME
+
+// Replace with any scheme and host you would like to use
+// For example, if you set scheme to 'cfttpsampleapp' and host to 'taptopay',
+// your deeplink will be cfhttpsampleapp://taptopay
+DEEPLINK_SCHEME=REPLACE_ME
+DEEPLINK_HOST=REPLACE_ME

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.cardfree.sample.taptopay</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>$(DEEPLINK_SCHEME)</string>
+			</array>
+		</dict>
+	</array>
+	<key>DEEPLINK_HOST</key>
+	<string>$(DEEPLINK_HOST)</string>
+	<key>DEEPLINK_SCHEME</key>
+	<string>$(DEEPLINK_SCHEME)</string>
+	<key>DEV_API_KEY</key>
+	<string>$(DEV_API_KEY)</string>
+	<key>PRD_API_KEY</key>
+	<string>$(PROD_API_KEY)</string>
+	<key>UAT_API_KEY</key>
+	<string>$(UAT_API_KEY)</string>
+</dict>
+</plist>

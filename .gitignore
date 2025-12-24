@@ -1,0 +1,20 @@
+Tap to Pay Sample App/LocalConfig.xcconfig
+# Xcode
+.DS_Store
+build/
+DerivedData/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+# Xcode workspace data (user-specific)
+xcuserdata/
+
+# Xcode scheme files (if you want schemes to be user-specific)
+*.xcscheme
+
+# CocoaPods
+Pods/
+Tap to Pay Sample App.xcodeproj/project.xcworkspace/contents.xcworkspacedata
