@@ -1,11 +1,4 @@
-//
-//  README.md
-//  Tap to Pay Sample App
-//
-//  Created by Allan Cheng on 12/24/25.
-//
-
-# Tap to Pay Sample App Setup
+# Sample App Setup
 
 This sample app requires an API key.
 
