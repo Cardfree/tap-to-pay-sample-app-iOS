@@ -69,6 +69,9 @@ struct ContentView: View {
             }
         }
         .task {
+            // Load previous inputs/selected values from cache
+            viewModel.loadFromCache()
+            
             viewModel.initIpAddress()
         }
         .onChange(of: deeplinkURL) { _, newURL in

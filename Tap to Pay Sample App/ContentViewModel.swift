@@ -33,6 +33,13 @@ final class ContentViewModel: ObservableObject {
         case success = "success"
     }
     
+    enum CacheKey: String {
+        case amount = "amount"
+        case storeId = "store_id"
+        case orderId = "order_id"
+        case environment = "environment"
+    }
+    
     // MARK: - Init
     init(apiClient: ApiClient = ApiClient()) {
         self.apiClient = apiClient
@@ -76,6 +83,9 @@ final class ContentViewModel: ObservableObject {
             resultText = "Store ID is required"
             return
         }
+        
+        // Save selected input to cache
+        saveToCache()
         
         isLoading = true
         resultText = ""
@@ -198,5 +208,26 @@ final class ContentViewModel: ObservableObject {
         formatter.minimumFractionDigits = 0
         
         return formatter.number(from: input) != nil
+    }
+    
+    //MARK: - Cache
+    func saveToCache() {
+        let defaults = UserDefaults.standard
+        defaults.set(amount, forKey: CacheKey.amount.rawValue)
+        defaults.set(orderId, forKey: CacheKey.orderId.rawValue)
+        defaults.set(storeId, forKey: CacheKey.storeId.rawValue)
+        defaults.set(selectedEnvironment.displayName, forKey: CacheKey.environment.rawValue)
+        
+    }
+    
+    func loadFromCache() {
+        let defaults = UserDefaults.standard
+        amount = defaults.string(forKey: CacheKey.amount.rawValue) ?? ""
+        orderId = defaults.string(forKey: CacheKey.orderId.rawValue) ?? ""
+        storeId = defaults.string(forKey: CacheKey.storeId.rawValue) ?? ""
+        if let envValue = defaults.string(forKey: CacheKey.environment.rawValue),
+           let environment = AppEnvironment(rawValue: envValue) {
+            selectedEnvironment = environment
+        }
     }
 }
